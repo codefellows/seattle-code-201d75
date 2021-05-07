@@ -1,0 +1,120 @@
+body * {
+
+  /* box-sizing: border-box; */
+}
+
+body {
+  background-color: lightgray;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.2em;
+}
+
+img {
+
+  border-radius: 10%;
+}
+
+header {
+  position: sticky;
+  top: 0%;
+  background-color: grey;
+  height: 60px;
+  padding: 10px;
+}
+
+section {
+  margin: 20px;
+}
+
+#herding {
+  width: 100%;
+}
+
+section p {
+  background-color: grey;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+article img {
+  width: 100%;
+}
+
+article {
+  float: left;
+  width: 30%;
+  margin-bottom: 50px;
+}
+
+#one, #two {
+  padding-right: 5%;
+}
+
+div {
+  background-color: grey;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+section:nth-child(3) {
+  clear: both;
+  height: 500px;
+}
+
+#badDog {
+  width: 45%;
+  float: left;
+}
+section:nth-child(3) div {
+  background-color: grey;
+  width: 45%;
+  float: right;
+}
+
+ol li {
+  font-size: 1em;
+  line-height: 1.5em;
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+ul li {
+  font-size: 1em;
+  line-height: 1.2em;
+}
+
+
+footer {
+  clear: both;
+  height: 50px;
+  width: 100%;
+  background-color: gray;
+  padding: 10px;
+}
+
+footer p {
+  /* width: 250px;
+  margin: 10px auto; */
+  text-align: center;
+}
+
+li {
+  /* text-align: center; */
+}
