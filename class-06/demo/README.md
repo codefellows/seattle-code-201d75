@@ -6,8 +6,8 @@ The Seattle Kitten Rescue has tons of kittens who need good homes. One of the be
 
 ### required features
 
-- i would go there, type in the kitten's name, age
-- create a narrative of who this kitten is - personality, likes, etc.
+- I would go there, type in the kitten's name, age - an admin user can add kittens to the page for addoption by entering them into a form
+- create a narrative of who this kitten is - personality, likes, etc. - a bio on each kitten
 - breed
 - good with kids/dogs/other cats
 - picture(s) - one at minimum, more is nice
