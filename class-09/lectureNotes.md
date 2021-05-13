@@ -30,3 +30,9 @@
 6. call functions
 
 
+## more resources on consructors and prototypes vs classes
+- https://css-tricks.com/understanding-javascript-constructors/
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Details_of_the_Object_Model
+- https://eloquentjavascript.net/06_object.html
+
+
