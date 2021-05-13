@@ -1,5 +1,11 @@
 // problem domain: the Seattle Kitten Rescue has tons of kittens who need good homes. One of the best ways to reach prospective adoptive homes is to have profiles for each kitten available on a website. There are hundreds of kittens, though, and only a few volunteers; it's too time-consuming to hand-code each kitten's profile on their website. They need a better way.
 
+// --------------------------- Global Variables ---------------------------//
+const allKittens = [];
+// identify a target to listen to
+const formElem = document.getElementById('addKittenForm');
+
+// --------------------------- Constructor Functions ---------------------------//
 // create a kitten factory aka constructor function
 function Kitten(name, photo, interests, isGoodWithKids, isGoodWithDogs, isGoodWithCats) {
   this.name = name;
@@ -8,12 +14,11 @@ function Kitten(name, photo, interests, isGoodWithKids, isGoodWithDogs, isGoodWi
   this.isGoodWithKids = isGoodWithKids;
   this.isGoodWithCats = isGoodWithCats;
   this.isGoodWithDogs = isGoodWithDogs;
+
+  allKittens.push(this);
 }
 
-// global function that gives us a random age 
-function randomAge (min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
+// --------------------------- Prototype Methods ---------------------------//
 
 // add a get age prototype method
 Kitten.prototype.getAge = function() {
@@ -86,21 +91,69 @@ Kitten.prototype.render = function() {
 
 }
 
-let frankie = new Kitten('Frankie', './images/frankie.jpeg', ['lazers', 'mice', 'string'], true, false, true);
+
+// --------------------------- Regular Functions ---------------------------//
+// global function that gives us a random age 
+function randomAge (min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let formName = event.target.name.value;
+  let photo = event.target.photo.value;
+  let interestsString = event.target.interests.value;
+  let isGoodWithKids = event.target.isGoodWithKids.checked;
+  let isGoodWithDogs = event.target.isGoodWithDogs.checked;
+  let isGoodWithCats = event.target.isGoodWithCats.checked;
+  let interests = interestsString.split(',')
+  
+  let newKitten = new Kitten(formName, photo, interests, isGoodWithKids, isGoodWithDogs, isGoodWithCats);
+  // allKittens.push(newKitten)
+  // console.log(newKitten);
+  newKitten.getAge();
+  // newKitten.render();
+  renderAllKittens();
+  // how do we make sure that we render all the kittens again we don't double up?
+  //Kitten(name, photo, interests, isGoodWithKids, isGoodWithDogs, isGoodWithCats)
+  // a common programming pattern is to wipe out ALL content in a section and rerender all of it 
+  // reset the form for the user
+  event.target.reset();
+}
+
+function renderAllKittens() {
+  for (let i = 0; i < allKittens.length; i++) {
+    allKittens[i].render();
+  }
+}
+
+// --------------------------- Make the page run ---------------------------//
+
+// --------------------------- All Listeners ---------------------------//
+
+// identify the event we want to listen for: submit
+// attach an event listener
+formElem.addEventListener('submit', handleSubmit)
+// I heard submit!!!
+// I know what to do: handleSumbit(event);
+// a callback function is a reference to a function that we will call when appropriate
+// handle the event
+// write the handle submit function
+// event handles always come with a event passed in as an argument
+
+
+// --------------------------- Object Instances ---------------------------//
+const frankie = new Kitten('Frankie', './images/frankie.jpeg', ['lazers', 'mice', 'string'], true, false, true);
 
 
 const jumper = new Kitten('jumper', './images/jumper.jpeg', ['sunbeams', 'yarn', 'milk', 'paper bags'], false, true, true);
 
 const serena = new Kitten('serena', './images/serena.jpeg', ['sitting on laps', 'climbing curtains', 'eating treats'], true, null, true);
 
-
-
-
-
-
 frankie.getAge();
 jumper.getAge();
 serena.getAge();
-frankie.render();
-jumper.render();
-serena.render();
+
+// --------------------------- Call the function that put data on the page ---------------------------//
+renderAllKittens();
