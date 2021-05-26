@@ -29,8 +29,11 @@ Preview of the topics in Code 301, and some over-arching 'how the web works' dis
 
 - Frequent pair programming
 - Code Challenges
+  - 'write a function that takes in two arguments, a number and a name, and returns an object with name and number as properties'
+  - lot's of array methods and string methods built in to JS
 - 3 modules + project week
   - Code 301 begins with front end development using React and Bootstrap. Module 2 introduces the back-end and building servers to serve files to a React front-end. Module 3 brings everything together with the development of a full-stack application from start to finish. The final module is team-based project work.
+- MERN - mongo(db), Express Server, React front end, Node
 
 ### Concepts in 301
 
